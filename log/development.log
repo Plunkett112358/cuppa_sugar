@@ -1,0 +1,221 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (51.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195218')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20140113195327)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195327')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "returned" boolean, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195451')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (26.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195218')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20140113195327)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195327')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "returned" boolean, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195451')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (26.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (49.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195218')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20140113195327)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195327')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "returned" boolean, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195451')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+Migrating to CreateItems (20140113195327)
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (141.8ms)[0m  [1mINSERT INTO "items" ("category", "created_at", "description", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "book"], ["created_at", Mon, 13 Jan 2014 21:17:47 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["updated_at", Mon, 13 Jan 2014 21:17:47 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (153.5ms)[0m  DROP DATABASE IF EXISTS "cuppa_sugar_test"
+  [1m[36m (955.8ms)[0m  [1mCREATE DATABASE "cuppa_sugar_test" ENCODING = 'unicode'[0m
+  [1m[35m (37.6ms)[0m  CREATE TABLE "borrows" ("id" serial primary key, "returned" boolean, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (31.7ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195451')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195218')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195327')
+Connecting to database specified by database.yml
+  [1m[36m (2.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (138.8ms)[0m  DROP DATABASE IF EXISTS "cuppa_sugar_test"
+  [1m[36m (650.1ms)[0m  [1mCREATE DATABASE "cuppa_sugar_test" ENCODING = 'unicode'[0m
+  [1m[35m (35.1ms)[0m  CREATE TABLE "borrows" ("id" serial primary key, "returned" boolean, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195451')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195218')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195327')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (41.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195218')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20140113195327)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195327')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "borrowed" boolean, "item_id" integer, "borrower_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195451')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (129.4ms)[0m  [1mDROP DATABASE IF EXISTS "cuppa_sugar_development"[0m
+  [1m[35m (133.2ms)[0m  DROP DATABASE IF EXISTS "cuppa_sugar_test"
+  [1m[36m (449.9ms)[0m  [1mCREATE DATABASE "cuppa_sugar_development" ENCODING = 'unicode'[0m
+  [1m[35m (401.3ms)[0m  CREATE DATABASE "cuppa_sugar_test" ENCODING = 'unicode'
+  [1m[36m (29.8ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "borrowed" boolean, "item_id" integer, "borrower_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.4ms)[0m  CREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195451')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195218')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195327')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (25.9ms)[0m  INSERT INTO "items" ("category", "created_at", "description", "name", "owner_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["category", "book"], ["created_at", Tue, 14 Jan 2014 01:32:18 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["owner_id", nil], ["updated_at", Tue, 14 Jan 2014 01:32:18 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+Migrating to CreateItems (20140113195327)
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (121.9ms)[0m  [1mDROP DATABASE IF EXISTS "cuppa_sugar_development"[0m
+  [1m[35m (127.9ms)[0m  DROP DATABASE IF EXISTS "cuppa_sugar_test"
+  [1m[36m (416.4ms)[0m  [1mCREATE DATABASE "cuppa_sugar_development" ENCODING = 'unicode'[0m
+  [1m[35m (350.4ms)[0m  CREATE DATABASE "cuppa_sugar_test" ENCODING = 'unicode'
+  [1m[36m (27.5ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "borrowed" boolean, "item_id" integer, "borrower_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195451')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195218')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195327')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.4ms)[0m  INSERT INTO "items" ("category", "created_at", "description", "name", "owner_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["category", "book"], ["created_at", Tue, 14 Jan 2014 01:37:08 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["owner_id", nil], ["updated_at", Tue, 14 Jan 2014 01:37:08 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113195218)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (30.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195218')
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20140113195327)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195327')
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBorrows (20140113195451)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (22.5ms)[0m  [1mCREATE TABLE "borrows" ("id" serial primary key, "borrowed" boolean DEFAULT 'f', "item_id" integer, "borrower_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140113195451')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.7ms)[0m  [1mINSERT INTO "users" ("bio", "city", "created_at", "image_url", "name", "password", "state", "street_address", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["bio", nil], ["city", nil], ["created_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00], ["image_url", nil], ["name", "Meghann"], ["password", nil], ["state", nil], ["street_address", nil], ["updated_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("bio", "city", "created_at", "image_url", "name", "password", "state", "street_address", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["bio", nil], ["city", nil], ["created_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00], ["image_url", nil], ["name", "Tanner"], ["password", nil], ["state", nil], ["street_address", nil], ["updated_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "items" ("category", "created_at", "description", "name", "owner_id", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", "book"], ["created_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["owner_id", 1], ["updated_at", Tue, 14 Jan 2014 01:43:20 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (121.2ms)[0m  DROP DATABASE IF EXISTS "cuppa_sugar_test"
+  [1m[36m (353.8ms)[0m  [1mCREATE DATABASE "cuppa_sugar_test" ENCODING = 'unicode'[0m
+  [1m[35m (34.0ms)[0m  CREATE TABLE "borrows" ("id" serial primary key, "borrowed" boolean DEFAULT 'f', "item_id" integer, "borrower_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "description" text, "category" character varying(255), "owner_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (30.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "password" character varying(255), "bio" text, "image_url" character varying(255), "street_address" character varying(255), "city" character varying(255), "state" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195451')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140113195218')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140113195327')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
