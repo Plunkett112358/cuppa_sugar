@@ -6,8 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+User.delete_all 
+ Item.delete_all
+
 user= User.create(name: "Meghann")
 
-user_two= User.create(name: "Tanner")
+user_two= User.create(name: "Bob")
 
 my_item_object = Item.create(name: "White Noise", category: "book", description: "best book ever", owner_id: user.id)

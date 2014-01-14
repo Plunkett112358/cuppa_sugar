@@ -1,38 +1,79 @@
 CuppaSugar::Application.routes.draw do
 
-root to: "items#index"
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  # devise_for :users
+
+# root to: "items#index"
+
+root :to => "home#index"
 
 
 resources :items
 
-resources :user
+# resources :user
 
 resources :borrow
 
+# devise_for :users, :controllers => {:omniauth_callbacks => "user/omniauth_callbacks"}
 
-#  root        /                          items#index
-#   item_index GET    /item(.:format)            item#index
-#              POST   /item(.:format)            item#create
-#     new_item GET    /item/new(.:format)        item#new
-#    edit_item GET    /item/:id/edit(.:format)   item#edit
-#         item GET    /item/:id(.:format)        item#show
-#              PUT    /item/:id(.:format)        item#update
-#              DELETE /item/:id(.:format)        item#destroy
-#   user_index GET    /user(.:format)            user#index
-#              POST   /user(.:format)            user#create
-#     new_user GET    /user/new(.:format)        user#new
-#    edit_user GET    /user/:id/edit(.:format)   user#edit
-#         user GET    /user/:id(.:format)        user#show
-#              PUT    /user/:id(.:format)        user#update
-#              DELETE /user/:id(.:format)        user#destroy
-# borrow_index GET    /borrow(.:format)          borrow#index
-#              POST   /borrow(.:format)          borrow#create
-#   new_borrow GET    /borrow/new(.:format)      borrow#new
-#  edit_borrow GET    /borrow/:id/edit(.:format) borrow#edit
-#       borrow GET    /borrow/:id(.:format)      borrow#show
-#              PUT    /borrow/:id(.:format)      borrow#update
-#              DELETE /borrow/:id(.:format)      borrow#destroy
+devise_scope :user do
+  get "sign_out", :to => "devise/sessions#destroy", :as => :destroy_user_session
+end
+
+#         new_user_session GET      /users/sign_in(.:format)               devise/sessions#new
+#             user_session POST     /users/sign_in(.:format)               devise/sessions#create
+#     destroy_user_session DELETE   /users/sign_out(.:format)              devise/sessions#destroy
+#            user_password POST     /users/password(.:format)              devise/passwords#create
+#        new_user_password GET      /users/password/new(.:format)          devise/passwords#new
+#       edit_user_password GET      /users/password/edit(.:format)         devise/passwords#edit
+#                          PUT      /users/password(.:format)              devise/passwords#update
+# cancel_user_registration GET      /users/cancel(.:format)                devise/registrations#cancel
+#        user_registration POST     /users(.:format)                       devise/registrations#create
+#    new_user_registration GET      /users/sign_up(.:format)               devise/registrations#new
+#   edit_user_registration GET      /users/edit(.:format)                  devise/registrations#edit
+#                          PUT      /users(.:format)                       devise/registrations#update
+#                          DELETE   /users(.:format)                       devise/registrations#destroy
+#  user_omniauth_authorize GET|POST /users/auth/:provider(.:format)        devise/omniauth_callbacks#passthru {:provider=>/facebook/}
+#   user_omniauth_callback GET|POST /users/auth/:action/callback(.:format) devise/omniauth_callbacks#(?-mix:facebook)
+#                     root          /                                      home#index
+#                    items GET      /items(.:format)                       items#index
+#                          POST     /items(.:format)                       items#create
+#                 new_item GET      /items/new(.:format)                   items#new
+#                edit_item GET      /items/:id/edit(.:format)              items#edit
+#                     item GET      /items/:id(.:format)                   items#show
+#                          PUT      /items/:id(.:format)                   items#update
+#                          DELETE   /items/:id(.:format)                   items#destroy
+#               user_index GET      /user(.:format)                        user#index
+#                          POST     /user(.:format)                        user#create
+#                 new_user GET      /user/new(.:format)                    user#new
+#                edit_user GET      /user/:id/edit(.:format)               user#edit
+#                     user GET      /user/:id(.:format)                    user#show
+#                          PUT      /user/:id(.:format)                    user#update
+#                          DELETE   /user/:id(.:format)                    user#destroy
+#             borrow_index GET      /borrow(.:format)                      borrow#index
+#                          POST     /borrow(.:format)                      borrow#create
+#               new_borrow GET      /borrow/new(.:format)                  borrow#new
+#              edit_borrow GET      /borrow/:id/edit(.:format)             borrow#edit
+#                   borrow GET      /borrow/:id(.:format)                  borrow#show
+#                          PUT      /borrow/:id(.:format)                  borrow#update
+#                          DELETE   /borrow/:id(.:format)                  borrow#destroy
+#         new_user_session GET      /users/sign_in(.:format)               devise/sessions#new
+#                          POST     /users/sign_in(.:format)               devise/sessions#create
+#     destroy_user_session DELETE   /users/sign_out(.:format)              devise/sessions#destroy
+#                          POST     /users/password(.:format)              devise/passwords#create
+#                          GET      /users/password/new(.:format)          devise/passwords#new
+#                          GET      /users/password/edit(.:format)         devise/passwords#edit
+#                          PUT      /users/password(.:format)              devise/passwords#update
+#                          GET      /users/cancel(.:format)                devise/registrations#cancel
+#                          POST     /users(.:format)                       devise/registrations#create
+#                          GET      /users/sign_up(.:format)               devise/registrations#new
+#                          GET      /users/edit(.:format)                  devise/registrations#edit
+#                          PUT      /users(.:format)                       devise/registrations#update
+#                          DELETE   /users(.:format)                       devise/registrations#destroy
+#  user_omniauth_authorize GET|POST /users/auth/:provider(.:format)        user/omniauth_callbacks#passthru {:provider=>/facebook/}
+#   user_omniauth_callback GET|POST /users/auth/:action/callback(.:format) user/omniauth_callbacks#(?-mix:facebook)
+#     destroy_user_session GET      /sign_out(.:format)                    devise/sessions#destroy
 
 
 

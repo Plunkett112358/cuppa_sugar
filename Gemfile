@@ -18,7 +18,15 @@ gem 'httparty'
 
 gem 'json'
 
+gem 'devise'
+
+gem 'omniauth-facebook'
+
 gem 'unirest'
+
+gem 'better_errors'
+
+gem 'binding_of_caller'
 
 # Gems used only for assets and not required
 # in production environments by default.

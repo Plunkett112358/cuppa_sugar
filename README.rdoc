@@ -73,10 +73,12 @@ BORROWS belong to ITEMS
 
 
 
+_______________FB NOTES_________________
+
+https://developers.facebook.com/x/apps/389772201158924/dashboard/
 
 
-
-API NOTES
+----------------------API NOTES----------------------
 response = Unirest::get "https://montanaflynn-mapit.p.mashape.com/directions?starting=Orange%20County&ending=New%20York",
 [6] pry(main)* headers: {
 [6] pry(main)*   "X-Mashape-Authorization" => "pNMqKdhb94S2zg2jLbX7c4FBnNbZFfFo"
@@ -181,6 +183,350 @@ from (pry):19:in `__pry__'
 
 
 
+=---------------BORROW---------------
+
+
+pry(main)> Item.all
+  Item Load (0.6ms)  SELECT "items".* FROM "items"
+=> [#<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">]
+[5] pry(main)> wn = Item.first
+  Item Load (0.6ms)  SELECT "items".* FROM "items" LIMIT 1
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[6] pry(main)> wn
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[7] pry(main)> wn.borrows
+  Borrow Load (0.5ms)  SELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" = 1
+=> []
+[8] pry(main)> wn.owner
+  User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+=> #<User id: 1, name: "Meghann", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[9] pry(main)> wn.owner.name
+=> "Meghann"
+[10] pry(main)> wn.borrows
+=> []
+[11] pry(main)> wn.borrows.build
+=> #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>
+[12] pry(main)> wn.borrows.to_sql
+=> "SELECT \"borrows\".* FROM \"borrows\"  WHERE \"borrows\".\"item_id\" = 1"
+[13] pry(main)> wn.borrows.build
+=> #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>
+[14] pry(main)> wn_borrow_one = wn.borrows.build
+=> #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>
+[15] pry(main)> wn_borrow_one
+=> #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>
+[16] pry(main)> wn_borrow_one.item
+NoMethodError: undefined method `item' for #<Borrow:0x007fb8233c44d8>
+from /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activemodel-3.2.16/lib/active_model/attribute_methods.rb:407:in `method_missing'
+[17] pry(main)> wn_borrow_one.borrower_id
+=> nil
+[18] pry(main)> wn_borrow_one.borrower_id = tanner.id
+NameError: undefined local variable or method `tanner' for main:Object
+from (pry):17:in `__pry__'
+[19] pry(main)> tanner = User.find_by_name("Tanner")
+  User Load (16.7ms)  SELECT "users".* FROM "users" WHERE "users"."name" = 'Tanner' LIMIT 1
+=> #<User id: 2, name: "Tanner", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[20] pry(main)> wn_borrow_one.borrower_id = tanner.id
+=> 2
+[21] pry(main)> wn_borrow_one
+=> #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: 2, created_at: nil, updated_at: nil>
+[22] pry(main)> wn_borrow_one.save
+   (0.2ms)  BEGIN
+  SQL (5.8ms)  INSERT INTO "borrows" ("borrowed", "borrower_id", "created_at", "item_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["borrowed", false], ["borrower_id", 2], ["created_at", Tue, 14 Jan 2014 02:22:17 UTC +00:00], ["item_id", 1], ["updated_at", Tue, 14 Jan 2014 02:22:17 UTC +00:00]]
+   (1.1ms)  COMMIT
+=> true
+[23] pry(main)> Borrow.all
+  Borrow Load (0.6ms)  SELECT "borrows".* FROM "borrows"
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:22:17">]
+[24] pry(main)> wn
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[25] pry(main)> wn.borrows
+=> [#<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>,
+ #<Borrow id: nil, borrowed: false, item_id: 1, borrower_id: nil, created_at: nil, updated_at: nil>,
+ #<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:22:17">]
+[26] pry(main)> wn.reload
+  Item Load (0.8ms)  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 1]]
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[27] pry(main)> wn.borrows
+  Borrow Load (0.5ms)  SELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" = 1
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:22:17">]
+[28] pry(main)> wn.borrows.first
+=> #<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:22:17">
+[29] pry(main)> wn.borrows.first.borrowed
+=> false
+[30] pry(main)> wn.borrows.first.borrowed = true
+=> true
+[31] pry(main)> wn.borrows.first
+=> #<Borrow id: 1, borrowed: true, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:22:17">
+[32] pry(main)> wn.borrows.first.save
+   (0.2ms)  BEGIN
+   (0.4ms)  UPDATE "borrows" SET "borrowed" = 't', "updated_at" = '2014-01-14 02:23:14.445869' WHERE "borrows"."id" = 1
+   (1.4ms)  COMMIT
+=> true
+[33] pry(main)> wn.borrows
+=> [#<Borrow id: 1, borrowed: true, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:23:14">]
+[34] pry(main)> wn.borrows.first
+=> #<Borrow id: 1, borrowed: true, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:23:14">
+[35] pry(main)> wn.borrows.first.borrowed
+=> true
+[36] pry(main)> wn.borrows.first.borrowed = false
+=> false
+[37] pry(main)> wn.borrows.first.borrowed.save
+NoMethodError: undefined method `save' for false:FalseClass
+from (pry):36:in `__pry__'
+[38] pry(main)> wn.borrows.first.save
+   (0.2ms)  BEGIN
+   (0.4ms)  UPDATE "borrows" SET "borrowed" = 'f', "updated_at" = '2014-01-14 02:24:00.124943' WHERE "borrows"."id" = 1
+   (0.6ms)  COMMIT
+=> true
+[39] pry(main)> wn.borrows
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">]
+[40] pry(main)> User.create(name: "Bob")
+   (0.2ms)  BEGIN
+  SQL (2.6ms)  INSERT INTO "users" ("bio", "city", "created_at", "image_url", "name", "password", "state", "street_address", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["bio", nil], ["city", nil], ["created_at", Tue, 14 Jan 2014 02:24:36 UTC +00:00], ["image_url", nil], ["name", "Bob"], ["password", nil], ["state", nil], ["street_address", nil], ["updated_at", Tue, 14 Jan 2014 02:24:36 UTC +00:00]]
+   (0.7ms)  COMMIT
+=> #<User id: 3, name: "Bob", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 02:24:36", updated_at: "2014-01-14 02:24:36">
+[41] pry(main)> bob = _
+=> #<User id: 3, name: "Bob", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 02:24:36", updated_at: "2014-01-14 02:24:36">
+[42] pry(main)> bob
+=> #<User id: 3, name: "Bob", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 02:24:36", updated_at: "2014-01-14 02:24:36">
+[43] pry(main)> wn
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[44] pry(main)> wn.borrows
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">]
+[45] pry(main)> wn.borrows.build(borrower_id: bob.id, borrowed: true)
+=> #<Borrow id: nil, borrowed: true, item_id: 1, borrower_id: 3, created_at: nil, updated_at: nil>
+[46] pry(main)> wn.borrows.build(borrower_id: bob.id, borrowed: true).save
+   (0.4ms)  BEGIN
+  SQL (0.6ms)  INSERT INTO "borrows" ("borrowed", "borrower_id", "created_at", "item_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["borrowed", true], ["borrower_id", 3], ["created_at", Tue, 14 Jan 2014 02:25:27 UTC +00:00], ["item_id", 1], ["updated_at", Tue, 14 Jan 2014 02:25:27 UTC +00:00]]
+   (1.3ms)  COMMIT
+=> true
+[47] pry(main)> wn.borrows
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: nil, borrowed: true, item_id: 1, borrower_id: 3, created_at: nil, updated_at: nil>,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[48] pry(main)> wn.reload
+  Item Load (0.5ms)  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", 1]]
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[49] pry(main)> wn.borrows
+  Borrow Load (0.5ms)  SELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" = 1
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[50] pry(main)> quit
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  has many borrows
+  can be borrowed by a user (FAILED - 1)
+  starts off as not borrowed (FAILED - 2)
+  belongs to someone
+
+Failures:
+
+  1) Item can be borrowed by a user
+     Failure/Error: book.borrow_me(tanner) # should let me borrow a book
+     NoMethodError:
+       undefined method `borrow_me' for #<Item:0x007ff2e2ff2850>
+     # ./spec/models/item_spec.rb:26:in `block (2 levels) in <top (required)>'
+
+  2) Item starts off as not borrowed
+     Failure/Error: book.borrowed?.should eq(false)
+     NoMethodError:
+       undefined method `borrowed?' for #<Item:0x007ff2e58a1030>
+     # ./spec/models/item_spec.rb:22:in `block (2 levels) in <top (required)>'
+
+Finished in 0.14737 seconds
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/models/item_spec.rb:25 # Item can be borrowed by a user
+rspec ./spec/models/item_spec.rb:21 # Item starts off as not borrowed
+
+Randomized with seed 51092
+
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rails c
+Loading development environment (Rails 3.2.16)
+[1] pry(main)> Item.first
+  Item Load (0.6ms)  SELECT "items".* FROM "items" LIMIT 1
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[2] pry(main)> book = _
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[3] pry(main)> book
+=> #<Item id: 1, name: "White Noise", description: "best book ever", category: "book", owner_id: 1, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[4] pry(main)> book.owner
+  User Load (0.5ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+=> #<User id: 1, name: "Meghann", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[5] pry(main)> book.borrows
+  Borrow Load (0.4ms)  SELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" = 1
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[6] pry(main)> book.borrows.destroy
+=> []
+[7] pry(main)> book.borrows
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[8] pry(main)> book.borrows.each(&:destroy)
+   (0.2ms)  BEGIN
+  SQL (4.3ms)  DELETE FROM "borrows" WHERE "borrows"."id" = $1  [["id", 1]]
+   (1.4ms)  COMMIT
+   (0.1ms)  BEGIN
+  SQL (0.3ms)  DELETE FROM "borrows" WHERE "borrows"."id" = $1  [["id", 2]]
+   (0.5ms)  COMMIT
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[9] pry(main)> book.borrows
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[10] pry(main)> book.borrows.destroy_all
+   (0.2ms)  BEGIN
+   (0.2ms)  COMMIT
+=> [#<Borrow id: 1, borrowed: false, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:22:17", updated_at: "2014-01-14 02:24:00">,
+ #<Borrow id: 2, borrowed: true, item_id: 1, borrower_id: 3, created_at: "2014-01-14 02:25:27", updated_at: "2014-01-14 02:25:27">]
+[11] pry(main)> book.borrows
+=> []
+[12] pry(main)> book.borrows
+=> []
+[13] pry(main)> tanner = User.find_by_name("Tanner")
+  User Load (1.0ms)  SELECT "users".* FROM "users" WHERE "users"."name" = 'Tanner' LIMIT 1
+=> #<User id: 2, name: "Tanner", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 01:43:20", updated_at: "2014-01-14 01:43:20">
+[14] pry(main)> book.borrow_me(tanner)
+   (0.2ms)  BEGIN
+  SQL (2.1ms)  INSERT INTO "borrows" ("borrowed", "borrower_id", "created_at", "item_id", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["borrowed", true], ["borrower_id", 2], ["created_at", Tue, 14 Jan 2014 02:32:35 UTC +00:00], ["item_id", 1], ["updated_at", Tue, 14 Jan 2014 02:32:35 UTC +00:00]]
+   (1.3ms)  COMMIT
+=> true
+[15] pry(main)> book.borros
+NoMethodError: undefined method `borros' for #<Item:0x007f8173f0bf58>
+from /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activemodel-3.2.16/lib/active_model/attribute_methods.rb:407:in `method_missing'
+[16] pry(main)> book.borrows
+=> [#<Borrow id: 3, borrowed: true, item_id: 1, borrower_id: 2, created_at: "2014-01-14 02:32:35", updated_at: "2014-01-14 02:32:35">]
+[17] pry(main)> book.borrows.last.borrower_id
+=> 2
+[18] pry(main)> quit
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  belongs to someone
+  has many borrows
+  knows its own borrower (FAILED - 1)
+
+Failures:
+
+  1) Item knows its own borrower
+     Failure/Error: book.borrower.should eq(tanner)
+     NoMethodError:
+       undefined method `borrower' for #<Item:0x007fb0a6419db8>
+     # ./spec/models/item_spec.rb:27:in `block (2 levels) in <top (required)>'
+
+Finished in 0.18339 seconds
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/models/item_spec.rb:25 # Item knows its own borrower
+
+Randomized with seed 46294
+
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  belongs to someone
+  has many borrows
+  knows its own borrower (FAILED - 1)
+
+Failures:
+
+  1) Item knows its own borrower
+     Failure/Error: book.borrower.should eq(tanner)
+     NoMethodError:
+       undefined method `borrower_id' for []:ActiveRecord::Relation
+     # ./app/models/item.rb:16:in `borrower'
+     # ./spec/models/item_spec.rb:27:in `block (2 levels) in <top (required)>'
+
+Finished in 0.16201 seconds
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/models/item_spec.rb:25 # Item knows its own borrower
+
+Randomized with seed 4287
+
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  has many borrows
+  belongs to someone
+  knows its own borrower (FAILED - 1)
+
+Failures:
+
+  1) Item knows its own borrower
+     Failure/Error: book.borrower.should eq(tanner)
+     ArgumentError:
+       Unknown key: borrowed
+     # ./app/models/item.rb:16:in `borrower'
+     # ./spec/models/item_spec.rb:27:in `block (2 levels) in <top (required)>'
+
+Finished in 0.16214 seconds
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/models/item_spec.rb:25 # Item knows its own borrower
+
+Randomized with seed 32865
+
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  belongs to someone
+  knows its own borrower (FAILED - 1)
+  has many borrows
+
+Failures:
+
+  1) Item knows its own borrower
+     Failure/Error: book.borrower.should eq(tanner)
+
+       expected: #<User id: 37, name: "Tanner", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 02:40:34", updated_at: "2014-01-14 02:40:34">
+            got: #<Borrow id: 4, borrowed: true, item_id: 31, borrower_id: 37, created_at: "2014-01-14 02:40:34", updated_at: "2014-01-14 02:40:34">
+
+       (compared using ==)
+
+       Diff:
+       @@ -1,2 +1,2 @@
+       -#<User id: 37, name: "Tanner", password: nil, bio: nil, image_url: nil, street_address: nil, city: nil, state: nil, created_at: "2014-01-14 02:40:34", updated_at: "2014-01-14 02:40:34">
+       +#<Borrow id: 4, borrowed: true, item_id: 31, borrower_id: 37, created_at: "2014-01-14 02:40:34", updated_at: "2014-01-14 02:40:34">
+
+     # ./spec/models/item_spec.rb:27:in `block (2 levels) in <top (required)>'
+
+Finished in 0.17357 seconds
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/models/item_spec.rb:25 # Item knows its own borrower
+
+Randomized with seed 25559
+
+meghannplunkett@Macintosh-2:~/Documents/ga_wdi/projects/cuppa_sugar/cuppa_sugar  chalkboard
+$ rspec spec/models/item_spec.rb
+
+Item
+  has many borrows
+  knows its own borrower
+  belongs to someone
+
+Finished in 0.17286 seconds
+3 examples, 0 failures
+
+Randomized with seed 2692
 
 
 
@@ -196,266 +542,3 @@ from (pry):19:in `__pry__'
 
 
 
-
-
-== Welcome to Rails
-
-Rails is a web-application framework that includes everything needed to create
-database-backed web applications according to the Model-View-Control pattern.
-
-This pattern splits the view (also called the presentation) into "dumb"
-templates that are primarily responsible for inserting pre-built data in between
-HTML tags. The model contains the "smart" domain objects (such as Account,
-Product, Person, Post) that holds all the business logic and knows how to
-persist themselves to a database. The controller handles the incoming requests
-(such as Save New Account, Update Product, Show Post) by manipulating the model
-and directing data to the view.
-
-In Rails, the model is handled by what's called an object-relational mapping
-layer entitled Active Record. This layer allows you to present the data from
-database rows as objects and embellish these data objects with business logic
-methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
-
-The controller and view are handled by the Action Pack, which handles both
-layers by its two parts: Action View and Action Controller. These two layers
-are bundled in a single package due to their heavy interdependence. This is
-unlike the relationship between the Active Record and Action Pack that is much
-more separate. Each of these packages can be used independently outside of
-Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
-
-
-== Getting Started
-
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
-
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
-
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
-
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
-
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
-
-
-== Debugging Rails
-
-Sometimes your application goes wrong. Fortunately there are a lot of tools that
-will help you debug it and get it back on the rails.
-
-First area to check is the application log files. Have "tail -f" commands
-running on the server.log and development.log. Rails will automatically display
-debugging and runtime information to these files. Debugging info will also be
-shown in the browser on requests from 127.0.0.1.
-
-You can also log your own messages directly into the log file from your code
-using the Ruby logger class from inside your controllers. Example:
-
-  class WeblogController < ActionController::Base
-    def destroy
-      @weblog = Weblog.find(params[:id])
-      @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
-    end
-  end
-
-The result will be a message in your log file along the lines of:
-
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1!
-
-More information on how to use the logger is at http://www.ruby-doc.org/core/
-
-Also, Ruby documentation can be found at http://www.ruby-lang.org/. There are
-several books available online as well:
-
-* Programming Ruby: http://www.ruby-doc.org/docs/ProgrammingRuby/ (Pickaxe)
-* Learn to Program: http://pine.fm/LearnToProgram/ (a beginners guide)
-
-These two books will bring you up to speed on the Ruby language and also on
-programming in general.
-
-
-== Debugger
-
-Debugger support is available through the debugger command when you start your
-Mongrel or WEBrick server with --debugger. This means that you can break out of
-execution at any point in the code, investigate and change the model, and then,
-resume execution! You need to install ruby-debug to run the server in debugging
-mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
-
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.all
-      debugger
-    end
-  end
-
-So the controller will accept the action, run the first line, then present you
-with a IRB prompt in the server window. Here you can do things like:
-
-  >> @posts.inspect
-  => "[#<Post:0x14a6be8
-          @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>,
-       #<Post:0x14a6620
-          @attributes={"title"=>"Rails", "body"=>"Only ten..", "id"=>"2"}>]"
-  >> @posts.first.title = "hello from a debugger"
-  => "hello from a debugger"
-
-...and even better, you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you can enter "cont".
-
-
-== Console
-
-The console is a Ruby shell, which allows you to interact with your
-application's domain model. Here you'll have all parts of the application
-configured, just like it is when the application is running. You can inspect
-domain models, change values, and save to the database. Starting the script
-without arguments will launch it in the development environment.
-
-To start the console, run <tt>rails console</tt> from the application
-directory.
-
-Options:
-
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
-  made to the database.
-* Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
-
-To reload your controllers and models after launching the console run
-<tt>reload!</tt>
-
-More information about irb can be found at:
-link:http://www.rubycentral.org/pickaxe/irb.html
-
-
-== dbconsole
-
-You can go to the command line of your database directly through <tt>rails
-dbconsole</tt>. You would be connected to the database with the credentials
-defined in database.yml. Starting the script without arguments will connect you
-to the development database. Passing an argument will connect you to a different
-database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
-PostgreSQL and SQLite 3.
-
-== Description of Contents
-
-The default directory structure of a generated Ruby on Rails application:
-
-  |-- app
-  |   |-- assets
-  |   |   |-- images
-  |   |   |-- javascripts
-  |   |   `-- stylesheets
-  |   |-- controllers
-  |   |-- helpers
-  |   |-- mailers
-  |   |-- models
-  |   `-- views
-  |       `-- layouts
-  |-- config
-  |   |-- environments
-  |   |-- initializers
-  |   `-- locales
-  |-- db
-  |-- doc
-  |-- lib
-  |   |-- assets
-  |   `-- tasks
-  |-- log
-  |-- public
-  |-- script
-  |-- test
-  |   |-- fixtures
-  |   |-- functional
-  |   |-- integration
-  |   |-- performance
-  |   `-- unit
-  |-- tmp
-  |   `-- cache
-  |       `-- assets
-  `-- vendor
-      |-- assets
-      |   |-- javascripts
-      |   `-- stylesheets
-      `-- plugins
-
-app
-  Holds all the code that's specific to this particular application.
-
-app/assets
-  Contains subdirectories for images, stylesheets, and JavaScript files.
-
-app/controllers
-  Holds controllers that should be named like weblogs_controller.rb for
-  automated URL mapping. All controllers should descend from
-  ApplicationController which itself descends from ActionController::Base.
-
-app/models
-  Holds models that should be named like post.rb. Models descend from
-  ActiveRecord::Base by default.
-
-app/views
-  Holds the template files for the view that should be named like
-  weblogs/index.html.erb for the WeblogsController#index action. All views use
-  eRuby syntax by default.
-
-app/views/layouts
-  Holds the template files for layouts to be used with views. This models the
-  common header/footer method of wrapping views. In your views, define a layout
-  using the <tt>layout :default</tt> and create a file named default.html.erb.
-  Inside default.html.erb, call <% yield %> to render the view using this
-  layout.
-
-app/helpers
-  Holds view helpers that should be named like weblogs_helper.rb. These are
-  generated for you automatically when using generators for controllers.
-  Helpers can be used to wrap functionality for your views into methods.
-
-config
-  Configuration files for the Rails environment, the routing map, the database,
-  and other dependencies.
-
-db
-  Contains the database schema in schema.rb. db/migrate contains all the
-  sequence of Migrations for your schema.
-
-doc
-  This directory is where your application documentation will be stored when
-  generated using <tt>rake doc:app</tt>
-
-lib
-  Application specific libraries. Basically, any kind of custom code that
-  doesn't belong under controllers, models, or helpers. This directory is in
-  the load path.
-
-public
-  The directory available for the web server. Also contains the dispatchers and the
-  default HTML files. This should be set as the DOCUMENT_ROOT of your web
-  server.
-
-script
-  Helper scripts for automation and generation.
-
-test
-  Unit and functional tests along with fixtures. When using the rails generate
-  command, template test files will be generated for you and placed in this
-  directory.
-
-vendor
-  External libraries that the application depends on. Also includes the plugins
-  subdirectory. If the app has frozen rails, those gems also go here, under
-  vendor/rails/. This directory is in the load path.
