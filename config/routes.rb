@@ -2,16 +2,18 @@ CuppaSugar::Application.routes.draw do
 
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # devise_for :users
-
-# root to: "items#index"
+devise_for :users
 
 root :to => "home#index"
+# root to: "items#index"
+authenticated :user do 
 
+  root :to => "devise/sessions#new"
+end
 
 resources :items
 
-# resources :user
+# resources :users
 
 resources :borrow
 
