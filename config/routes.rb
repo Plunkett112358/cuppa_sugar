@@ -4,7 +4,7 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
 devise_for :users
 
-root :to => "home#index"
+root :to => "items#index"
 # root to: "items#index"
 authenticated :user do 
 
@@ -12,6 +12,9 @@ authenticated :user do
 end
 
 resources :items
+
+
+get "views/users/profile" => "users#profile"
 
 # resources :users
 
@@ -23,7 +26,7 @@ devise_scope :user do
   get "sign_out", :to => "devise/sessions#destroy", :as => :destroy_user_session
 end
 
-#         new_user_session GET      /users/sign_in(.:format)               devise/sessions#new
+#          GET      /users/sign_in(.:format)               devise/sessions#new
 #             user_session POST     /users/sign_in(.:format)               devise/sessions#create
 #     destroy_user_session DELETE   /users/sign_out(.:format)              devise/sessions#destroy
 #            user_password POST     /users/password(.:format)              devise/passwords#create

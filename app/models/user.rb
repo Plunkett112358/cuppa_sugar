@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :bio, :city, :image_url, :name, :password, :state, :street_address
 
+  has_many :items
+  has_many :borrows
 
-devise :omniauthable, :omniauth_providers => [:facebook]
+  devise :omniauthable, :omniauth_providers => [:facebook]
 
 # Find facebook authorization
   def self.find_for_facebook_oauth(auth)
@@ -31,9 +33,4 @@ devise :omniauthable, :omniauth_providers => [:facebook]
       end
     end
   end
-
-
-
-
-
 end

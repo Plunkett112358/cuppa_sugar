@@ -9,9 +9,11 @@
 <body>
   <nav><% if user_signed_in? %>
     <%= link_to "Sign Out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Signg in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <% end %> </nav>
+  <% end %> 
+<%= link_to "Profile",views_users_profile_path%>
+
+
+</nav>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 <%= yield %>

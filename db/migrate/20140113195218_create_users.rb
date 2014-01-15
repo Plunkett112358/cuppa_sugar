@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.text :bio
-      t.string :image_url
+      t.text :image_url
       t.string :street_address
       t.string :city
       t.string :state

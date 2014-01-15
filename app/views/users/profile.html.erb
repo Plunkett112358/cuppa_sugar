@@ -1,0 +1,37 @@
+<section id='user-info'>
+
+  <img src="<%= current_user.image_url %>"/>
+  <%= current_user.name %>
+  <%= current_user.bio %>
+  <%= current_user.city %>
+  <%= current_user.state %>
+
+ </section>
+
+<section id='user-borrows'>
+
+  <% @my_borrows.each do |borrow| %>
+
+    <%= borrow.item.name%>
+    <%= borrow.item.category %>
+    <%= borrow.item.description %>
+<% end %>
+
+
+<section id='user-items'>
+
+  <% @items.each do |item| %>
+
+    <%= item.name %>
+    <%= item.category %>
+    <%= item.description %>
+
+  <% end %>
+
+</section>
+
+ </section>
+
+
+
+

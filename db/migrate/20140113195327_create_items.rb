@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :category
+      t.boolean :borrowed, default: false
       t.integer :owner_id
 
       
