@@ -16713,3 +16713,2495 @@ Served asset /bootstrap.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:13:31 -0500
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  [1m[35mBorrow Load (1.3ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 11
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = 16 LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 11
+  Rendered users/profile.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 167.7ms (Views: 35.9ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:17:57 -0500
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/views/items/search" for 127.0.0.1 at 2014-01-15 14:18:07 -0500
+
+ActionController::RoutingError (No route matches [GET] "/views/items/search"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:18:37 -0500
+Processing by ItemsController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 68.9ms (Views: 20.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:18:54 -0500
+Processing by ItemsController#search as HTML
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+Completed 500 Internal Server Error in 144.4ms
+
+ActionView::MissingTemplate - Missing template items/search, application/search with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views"
+  * "/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/devise-3.2.2/app/views"
+:
+  actionpack (3.2.16) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.16) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__4155896617691877266__process_action__1924950494355046819__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206779813040/variables" for 127.0.0.1 at 2014-01-15 14:18:54 -0500
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:19:22 -0500
+Processing by ItemsController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9.4ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:19:22 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:19:22 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:19:23 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:19:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:19:23 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Processing by ItemsController#search as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  Rendered items/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8.0ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:21:18 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:22:06 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 102.1ms
+
+NameError - undefined local variable or method `views_items_path' for #<#<Class:0x007fb49452e1a8>:0x007fb4946ff7e8>:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___3555209332227156877_70206780617140'
+  actionpack (3.2.16) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__4155896617691877266__process_action__546380602519371734__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206753550340/variables" for 127.0.0.1 at 2014-01-15 14:22:06 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17.7ms (Views: 15.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:21 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (6.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15.3ms (Views: 6.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:24 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2014-01-15 14:22:29 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21.5ms (Views: 13.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:30 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:30 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:22:30 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:30 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:22:30 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13.3ms (Views: 7.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8.3ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:06 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:23:11 -0500
+Processing by ItemsController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/search.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9.7ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:12 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:12 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:12 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:12 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2014-01-15 14:23:19 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 8.0ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:23:19 -0500
+Processing by ItemsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:23:19 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 20.6ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:19 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:20 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:20 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:23:31 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a2rCzak7cUpZQN0yKeLVAM87Nh8eiDuVq/JzXyuuM/U=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-01-15 19:05:47.699932', "current_sign_in_at" = '2014-01-15 19:23:31.935302', "sign_in_count" = 5, "updated_at" = '2014-01-15 19:23:31.936461' WHERE "users"."id" = 11[0m
+  [1m[35m (183.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 296.3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9.3ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:32 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:23:37 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  [1m[36mBorrow Load (0.2ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 11[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = 16 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 11[0m
+  Rendered users/profile.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 138.1ms (Views: 46.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:38 -0500
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:38 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:38 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-15 14:23:45 -0500
+Processing by ItemsController#search as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1
+  Rendered items/search.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 59.4ms (Views: 53.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:45 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:46 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:23:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:23:46 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (17.0ms)[0m  [1mDELETE FROM "items"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35mSQL (39.4ms)[0m  INSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["bio", "She likes sharks"], ["city", "New York"], ["created_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "meghann@example.com"], ["encrypted_password", "$2a$10$LRydKduGyqdxIxDPSVubq.T8peC7qws0b/ahPq/kEKCWUKdq6ARQa"], ["image_url", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEhUUEBQUFBQUFRQVFRQUFBQUFBQUFRQWFxQVFBQYHCggGBolGxQUITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0OGhAQFywcHBwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsKywsLCw3LCwsLCssLCwrLDcsLCwsNysrKywrLP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAAAQQFAgMGB//EAEAQAAIBAgIHBgQDBQcFAQAAAAABAgMRBCEFEjFBUWFxBiKBkaGxEzLB8FJy0TNCgrLhBxQjYpKi8RZDY3PSJP/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACERAQEAAgMAAgMBAQAAAAAAAAABAhEDITESMkFRYSIE/9oADAMBAAIRAxEAPwDnwsMDoVAwABDAAAAAAAAIAIYAIBiAQjIQCEMAEIYgEAAAhDEwEIyEQMRMyEwMQGAEwAGWCAYAAAMBWAYAIAAgJibNVbExgryaXUpsbpdyuoZLi95W5SJkWuIxsYbc3wREjpdN7EurKaSctr9L+4Kgt+b8P0M7nVpi6rCzjPZOPTMlzwM0rpXXFZnLYbAQe5+F8vKxbYLB1IZ06ko8lJ+q3+JE5LFvhtKaETLykv8AFjn+OOT8dz6ZEacLc1x+jTzT5M1xylZ2aYCGDLIY2EMAExDEAhDAgYsQxMBAMAJoWACwAAAAAAAAAATIOlccqUeb2Im1JWTbON0viXOTflyW4pnlpMiPUryqzu80vIlU/DwaRWwot78zZTjJbX5mC6wafD1uYudtqXjl7mqFbc8vVG5c9noQlLwdaN1k4+T8rWZ1+he98r1+Xzf7X3l4HG08IpfJk/NPwLTQ6kpJfLK+TT28M/19CKtK9Dw+Gi1w3Z5xfK/0ZD0joVNNwspW/ha/T7T3EzRuKk1ass9nxFdN8prjyz5M3Yi8M1nF7Gtnhw9uhafwri61JxdmrNbUzUy90o41E2laS+/DoURvjluMspomIYmWVIRkIgYgxsQCEMQCAAAnCGBYAAAAIYAAhikyBC0nPu2W/wBt5yuLkr2RcaVxd3ZbNl/0KWstnF2y63tf73mGV3WkiM6e8m4erdWmr9fozOOHyz3+5h8HK1tn20UW02Swv4c1w/ej4b0YQTjszW9EnD3Vm30lvXXiiwjh1LO1n6PmRtOmvB22pXW/c113M6XRtOM1su/KS8N/g34lJRwri77vb9Yl7o1Wd15fVPh6kbW06rRy7q2STW3lw/ptRHx0nC+rdxe1bfP9TfhYu+tHftW6f9RaSoa8XKGUltT5cfPqWiHK4qrfY723b1+q9iBGedg0jJqTayknmvdMjqsp8pK3ixMtXaLjuJjEzGnK6z+2ZHTLthrRMTGJgYgAAIQ2IBAAATxDAsEAwAQDEQgEHSFbK27fz5EurOyKTGTvfgZ8mWul8YrMRK78dnDm+Zrox1pT6prosreVjKo8+n/IaJzk3yMmk9XUcOnH79DQ6Of+Zf748uZNomU4JrPrfnxvu6kVppro4WMl3dj9ORsWHcM1nF+hpcmne9nx3P8AMt3XYS6OkEspq19+7wewyWmm/C17Plwezz+hb4bDqWcMuMdnjyKKrb5ovqnmmGGx+o1nq28V4cPBiFkdlgZyht2b7/ft/QnYjNXi7Pc/xLdGVvf+qKnRml4yynZ83/8ASt5FlKzTdNp8YNrPpzNIpXK6cpKpdx7tSO1e/VexzE5O+zNcPodhpqnr96N1OOx7JZfVeqOUx1XWu9jXzLd1twuLIhuwNe7s3u2E4psG++ru3iXBvx3pln6BMYi6hCGIBCYxMBAMAJwDEWAAAAAAECJjnkiq0i7KxbYzcUukZ59L/Qwz9aY+KqtK1/H2N2hWsyFipPzNVByjdLe7/diuk71Xa4SpDfJFzh4U5LbF+NzztVl/3KV+lSUfTVN1HSFKPyxqQe3apLzuWi3zeiPQkJrL0IOJ0I4JuPirZP6Ff2c7UR1lGpLLi8i7032sw0ItRmpO2yGbbfolzZGpV/lHMYq8MnFr8s/o0V9TSsIPNzvwtF+eY8X8apaVX/DjPNRXzOPFvh92Is9FZyVKLktzjkl3rttvb3crZZkTGVTK2J1LtYofJCUnzagvS79jL/rPEWTj8JO7/wAP4cpJRW+UnLNt7lw6HQ9kOyKrUpfHinGT7t/njzUrZPg0U3ZLsu6tTGQnn/d06V93xPiNX8qb8yfEfG2xJw+nnXjeUVGSyeq3a/JNsi46ad5Lbv8A6lVTi6NVxlsd4yXIm1ee7LquJntppGhKzy8uHQu8DNtff3xKenGzz80XWj6Wtu52++RbC9s8p0k6pibqytl5mk6WJCY2IBCZkYgIAACwEMRYNiAAAAAgRcesihx+46PEU9aLRz+Pjl0MeSdtMPFFiWbsJCyhU3fF+G+V4Jq/Xv8A+k1YtGWisZCDqU6yfwqy1ZOKvKnKLvTqxW9xd8srpyW+5WFTa+FcZ3a1lstsNNWhOKeVovatt2k0nbZsb8y9hWptJSnDWsr7VfnaVml1VzTjsXT1bKcfBp+iLbT8Y5udOyXNpeJeYrsjWpUf7z3akIuMqkY62tGN1fas1x6kWnS+JKFk1GL1s1Zt9OB6x2TqJ4fVktZO6aaums7p+BVphxy7U+K0d8ZRqwzjJJtJ8k00SMLgYRWat1N//T+IpXWErxVG940qsNfUvuUk1K3iY0NB4up8+IpQX+Shd+GvNr0LeeL667dLo7EU6NB1KjUKcE5SlLJJL6ld2OwDhh6lacXCeMrVMTKL2xjUk3Si/wCGz/iJmC7K0Y6s8RKriZQd4/Gl/hxlucaEUoX6plpiJbScv6jGd7eN/wBomC1MRrRyUs/EiautFSW+Pqt3sdX/AGk0VqUZPbKrqeLi2vYywOioqlBPilnszaVzns7WvTlKNJ5X8OZcYebSysuds/Am4/DLwT1lyTyl5OxuovWpvJa0cnltS2p8+fMtJqsrdq2a5mszqe241nVGFAgYmEATAQAAgIFiILhcuABDAAAQAUWk42clxzXmXpUadWx8mvYz5J0the3MYtbSvrLMscW/cg1o5+BjF66XQOKVSmoyScoZO6Ty/defL2LCrh1bJLwVjk9EVvh1Ivc+6/HZ62O1w80Nr4dxW04pOx6F2SxFPUyad47nvOUrYaLzRO7OYO07p24LiT41xdtSqOV+5JZZN2zWy9r3XiY4Sq4zs9nH9RYHFayz3O3A31ZxTRP9aWrL410RqszUpARapI5ft3TUo0L7I1dbyhNL1aFiU40Iveow/wBSkm/W5E7bY1OrCH4FrPq3aK9GTl3sNBvO7Sfjq5+5STtTOo8p5tKzzcop7JXWcHyadiNUmoZx+V/K99vwy5p5faIf97sk5X7vdnxVstbqsvUdeW3NWe229r99L3RpO2N6acQ1d237OhpY2hGsZUhMZiSEAMTAAAQFgAgLBgICAwYgACHpalrUpcVn5bfS5MBoWbhK4CrnJfe1M0SjmzotJ6I1e9HYne3+X+hSui1f7zX9Dmssa72i2+n37HT6LxevBO+ayl14+Jzkqf18t48Hi/hS1tqeUlxXHqEy6rtIV2k99szLBaRlL5O6+eRX4auppOLumWWAwqckw3wslW9GlUnk52vZXTd8+Bd4PQ0bJycm18t5O/V8TRgsErqz9Xe5f0adkG2WU11GMMsmY4rFKEW399AxWJUVxe5b2c5i8RKc7PYti+pDPbktMVpTq1JS2yqL6WXokdPga98JJXzVuvyq3qjntM4VpzlbJarfR5X8HZk/RGJVmpfLNWdt3Nc1dPwGLDNExUu+2tk1d9X/AMMcHbj98uJtxdPVbT2XunuT5cnkazXHFllTZiwEzVQCYCIAIZjcAAQAWFwMbjLAGICAwFcAAGacViYU461SSjG9rvi9xW4rtJQjkm5v/Ksv9TyI3BbNX2nO6Qw8abzdlu3vllvION7T1Jfs0qa45Sl5tWXkVFXFyldyk5O97t3ZnlZVp0myms3FldPaGuxpFZE2rzQMu4l19zoMJiZQayy5HMaEnbLmdjg6aaKtsKvMJpaNlbbwzv5FpR0hKSSXm1b0KLDU0mXeEaC/yqV8OyfF7W9v3yKmOH77Zc6ysaXTIqY5ftZWVGEG9k56kk9ji4ycr+RytDSSp1NW/cbjZ7lkrMmf2mY+9anRTypx1pfmns8kvU5CTLYsOS9vQ51LpX3Gq+VjkMBpipSsn34fhe1fll9C/wAFpelUyT1ZfhlZPwexmsrJOBgK5ZBXEMxAbZiDAAuAgAnXC5jcaJGRHrYxRyXelwW7qzDGVmu7Ha9/BGzR+CRlnya6jbj4/l6xp/FlwXJK/uZywtT8T9C/weFJMsMYfPL9umcWLhtJ6Nk4ttt2Ted2cVJHstfC3PIMXC05rhOS8pMtjdsebCTWkaQDEXYMqaN0UYQNkSRd4XAtKEl+9FPzR0ujZbEzdoTAa+Fov/xx9NhJWBcWjN0YxKhDIl0KtjbhcNdGivBxZK2lnSqXRo0jjo0acqkv3U315DoSShdnn3bbTTqS+HF91beYLdRymkMVKrVnUl805N/ovIxNUdvibZF45qwbMZIyFJBCTgdIVKT7jvH8Lzj5bvA6vRmKdWkptWu3s2ZNracXwPQeyOH/APywutrm/DXdvYi5WL4YTK6rWxMs8VhFtsQ44OT2eonLPytlwX8I4mba1CUdqNLNZZfGOWNnVAAAVTLjuYGGIlaL8vMtbqLSI9J6078fbcX+BgUmChmdFhEcVrtwnSyw6N8ka6KNskVrWNMonimlf21Vf+Wp/PI9sxFRRi5SyUU23yR4fjKmtUnL8U5y8HJs1wc/PfEdghtmuTLuZsVQkRIViVTeRMHof9nOkdeM6EnnDvw/I33l4Saf8R2rwiZ4z2f0j/d8RTq7oytL8ksp+jv1SPb6EvG5Wx08V3NfoYTD2yKvTa1cy2rYhROY0/pBWd2N9L/lA05pXUpqMXnbM86x1TN32sstMaQcnd58EUd222xIx5MjgbJEeavsCNRrbmWYt1hVNhjGojOogMX9D1TszRthaP8A64vxkr/U8rk9vJHsOhaWrRpLhTgvKKKZtuCdttWgZUMMSdU20oGLsiDisGmrWOVxVHUk4vds6HdVYnL9oqdnF8br6mnFdZaY/wDRjvHf6U4CuM6XCkmnFPYud/p9TaRazvLoV5LqNOObqbg4l9hClwUS7wzOZ2RY0jejTQRuIq0FWCcXrJOLTunstbeeCVHfPi7+eZ7dp3EfDw1af4ac/wCV2PEImmDm5/YxkszGSM4ceI5IuwaTbRluMJRMQJZ612N0v8XCQu7ypr4cusflb6x1X5nkNOpfqX/ZXSbo1JRb7tSNuko3cX/MvElfjy1Xf6Z0oop5nB6V0m5t55GGltKubsmU1Wo30KNMs2FVtu78Fy3GLBIJl2AiDiOIAapUjOMtz2mSBbQMePU9twEO7HovY8Tp7ucvqe56PjaK6fQz5HRwe1vVM2wiKm7khRM9OnaLWRzPaVZL830Z1NdHL9pflX5voy2H2inL9K564CuI63npRFg7u/M3VZZPp7mrDIy5b+G/DPytcGi4oFVhC3wyMHTFhQMsTOyb4XY6CI+mpWo1PyT/AJWQtFJ22xlsBU4z1Irxkn7JnlEuHE6rttpXXVKjF5QWvL8zVorwV/M5WPE1wmo5OW7yZiYAy7ImjBxNgAaTfSq+ZrkjGxA26+Zk+Bqk8zaIk0jCRkYkoZIAQACDiAnsYC3Kx7PQxqeGoyX/AHYwa8YqT9Lo8aZ2/ZnSDnSoU7/slUi/Gbcf9rSM+SdN+C/609CwTJzRX6PeRYlY6Giqcp2m+VfmXszqcU7I5PtK8l1+jGP2ivJ9KoBAB1OBnX+XxDDABjyeunh8XOALXDbfMAMo6Is6H0I2m/2NT8kvYABXiulP2s+v0RohsEBtHDl6yGgAlBMAABSMGAChPcb0AEQNmAASMkAwAQnsAAHM6Xsd8/iwArn404vs9SwGxFktgAZx1ouLOS7S7F+b6MAGP2ivJ9K58AA6nA//2Q=="], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Meghann"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", "NY"], ["street_address", "2484 7th ave"], ["uid", nil], ["updated_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'bob@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["bio", nil], ["city", nil], ["created_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "bob@example.com"], ["encrypted_password", "$2a$10$O7qL/SCaa.wtN3tBN3lNo.ftxh/8lyr525XpOmSudJR2fR9uoZE/e"], ["image_url", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Bob"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", nil], ["street_address", nil], ["uid", nil], ["updated_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["updated_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["description", "not too long"], ["name", "The Body Artist"], ["updated_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mUPDATE "items" SET "user_id" = 14, "updated_at" = '2014-01-15 19:30:58.803917' WHERE "items"."id" = 19[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  UPDATE "items" SET "user_id" = 14, "updated_at" = '2014-01-15 19:30:58.809769' WHERE "items"."id" = 20
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["description", "have not read"], ["name", "Libra"], ["updated_at", Wed, 15 Jan 2014 19:30:58 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (3.0ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "items"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35m (17.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'bob@example.com' LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["bio", nil], ["city", nil], ["created_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "bob@example.com"], ["encrypted_password", "$2a$10$j.nCYXf6u38.vwr04pU7tOXOkRkFyEUa0Mw/z6QCX6Q/URL3pJDbe"], ["image_url", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Bob"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", nil], ["street_address", nil], ["uid", nil], ["updated_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["updated_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00], ["description", "not too long"], ["name", "The Body Artist"], ["updated_at", Wed, 15 Jan 2014 19:32:43 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:32:44 UTC +00:00], ["description", "have not read"], ["name", "Libra"], ["updated_at", Wed, 15 Jan 2014 19:32:44 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "items"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'bob@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["updated_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["description", "not too long"], ["name", "The Body Artist"], ["updated_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["description", "have not read"], ["name", "Libra"], ["updated_at", Wed, 15 Jan 2014 19:33:15 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:33:38 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 11 LIMIT 1[0m
+Completed 401 Unauthorized in 26.3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:33:38 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17.2ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:39 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:39 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1
+Completed 401 Unauthorized in 2.1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 128.0ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:50 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:33:54 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (4.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+Completed 401 Unauthorized in 9.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (14.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 316.6ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:33:55 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:55 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:33:55 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:34:01 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1
+Completed 401 Unauthorized in 6.6ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 343.1ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:34:02 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:34:02 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:02 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:02 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (25.9ms)[0m  [1mDELETE FROM "items"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["bio", "She likes sharks"], ["city", "New York"], ["created_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "meghann@example.com"], ["encrypted_password", "$2a$10$0qfIuuKMqSkQEGB.x/DNWeeNnkY6sLrKcAaCvNjR4OFk3Pfpil05a"], ["image_url", "data:image/jpeg;base64,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"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Meghann"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", "NY"], ["street_address", "2484 7th ave"], ["uid", nil], ["updated_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'bob@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["bio", nil], ["city", nil], ["created_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "bob@example.com"], ["encrypted_password", "$2a$10$gR3hWEOa1kRmR9gyM6N5seW9gynvX8wAknUc990jIZ3IunSmzP9WG"], ["image_url", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Bob"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", nil], ["street_address", nil], ["uid", nil], ["updated_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["description", "best book ever"], ["name", "White Noise"], ["updated_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["description", "not too long"], ["name", "The Body Artist"], ["updated_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["user_id", nil]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "items" SET "user_id" = 17, "updated_at" = '2014-01-15 19:34:11.382763' WHERE "items"."id" = 28[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE "items" SET "user_id" = 17, "updated_at" = '2014-01-15 19:34:11.386470' WHERE "items"."id" = 29
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["borrowed", false], ["category", "book"], ["created_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["description", "have not read"], ["name", "Libra"], ["updated_at", Wed, 15 Jan 2014 19:34:11 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-01-15 14:34:16 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OyA/rVwsh1KvDsiNGlwONY8m68lVBYrJa9JKWZuyUQ=", "user"=>{"email"=>"Meghann@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'meghann@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-01-15 19:34:16.877087', "current_sign_in_at" = '2014-01-15 19:34:16.877087', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-01-15 19:34:16.878026' WHERE "users"."id" = 17[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/views/users/profile
+Completed 302 Found in 110.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:34:16 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mBorrow Load (0.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 13.1ms (Views: 10.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:34:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:34:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:34:17 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mBorrow Load (0.4ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 17
+  Rendered users/profile.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23.3ms (Views: 20.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:35:10 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:38:53 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+ERROR: compiling _app_views_users_profile_html_erb__1654815335922473479_70206778974740 RAISED /Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:89: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:91: syntax error, unexpected end-of-input, expecting keyword_end
+Function body:           def _app_views_users_profile_html_erb__1654815335922473479_70206778974740(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "users/profile";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<section id=\'user-info\'>
+
+  <img src="');@output_buffer.append= ( current_user.image_url );@output_buffer.safe_concat('"/></br>
+  ');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</br>
+  ');@output_buffer.append= ( current_user.bio );@output_buffer.safe_concat('</br>
+  ');@output_buffer.append= ( current_user.city );@output_buffer.safe_concat(',
+  ');@output_buffer.append= ( current_user.state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+ </section>
+
+
+<!-- my items table
+ -->
+
+<h1>Things I\'ve Borrowed</h1>
+<table class="table table-bordered table-hover">
+<section id=\'user-borrows\'>
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+
+</thead>
+<tbody>
+  <tr>
+');   @my_borrows.each do |borrow| 
+@output_buffer.safe_concat('
+    <td>');@output_buffer.append= ( borrow.item.name);@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( borrow.item.category );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( borrow.item.description );@output_buffer.safe_concat('</td>
+'); end 
+@output_buffer.safe_concat('<tr>
+</tbody></table>
+</section> 
+
+
+
+<!-- things I own -->
+
+<h1>Things I Own</h1>
+<!-- add an item -->
+
+<form>
+
+
+');@output_buffer.append=  form_for @new_item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('
+ ');@output_buffer.append= ( f.label :category );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :category );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+   ');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :description );@output_buffer.safe_concat('  
+');@output_buffer.safe_concat('
+</form>
+<!-- add an item -->
+<section id=\'user-items\'>
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+</thead>
+
+<tbody>
+  
+');   @items.each do |item| 
+@output_buffer.safe_concat('<tr>
+    <td>');@output_buffer.append= ( item.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( item.category );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( item.description );@output_buffer.safe_concat('</td>
+
+');   end 
+@output_buffer.safe_concat('</tr>
+</tbody>
+
+</table>
+ </section>
+
+
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:297:in `module_eval'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:297:in `compile'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:244:in `block in compile!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:232:in `synchronize'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:232:in `compile!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:144:in `block in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:125:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:143:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/base.rb:121:in `process'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal.rb:246:in `block in action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/query_cache.rb:64:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:16:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/engine.rb:484:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/application.rb:231:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered users/profile.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 151.9ms
+
+SyntaxError - /Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:89: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:91: syntax error, unexpected end-of-input, expecting keyword_end:
+  actionpack (3.2.16) lib/action_view/template.rb:297:in `'
+  actionpack (3.2.16) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.16) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.16) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.16) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206779140540/variables" for 127.0.0.1 at 2014-01-15 14:38:53 -0500
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:40:16 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+ERROR: compiling _app_views_users_profile_html_erb__1654815335922473479_70206759750900 RAISED /Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:91: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:93: syntax error, unexpected end-of-input, expecting keyword_end
+Function body:           def _app_views_users_profile_html_erb__1654815335922473479_70206759750900(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "users/profile";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<section id=\'user-info\'>
+
+  <img src="');@output_buffer.append= ( current_user.image_url );@output_buffer.safe_concat('"/></br>
+  ');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</br>
+  ');@output_buffer.append= ( current_user.bio );@output_buffer.safe_concat('</br>
+  ');@output_buffer.append= ( current_user.city );@output_buffer.safe_concat(',
+  ');@output_buffer.append= ( current_user.state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+ </section>
+
+
+<!-- my items table
+ -->
+
+<h1>Things I\'ve Borrowed</h1>
+<table class="table table-bordered table-hover">
+<section id=\'user-borrows\'>
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+
+</thead>
+<tbody>
+  <tr>
+');   @my_borrows.each do |borrow| 
+@output_buffer.safe_concat('
+    <td>');@output_buffer.append= ( borrow.item.name);@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( borrow.item.category );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( borrow.item.description );@output_buffer.safe_concat('</td>
+'); end 
+@output_buffer.safe_concat('<tr>
+</tbody></table>
+</section> 
+
+
+
+<!-- things I own -->
+
+<h1>Things I Own</h1>
+<!-- add an item -->
+
+
+
+
+');@output_buffer.append=  form_for @new_item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('
+ ');@output_buffer.append= ( f.label :category );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :category );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+   ');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.text_field :description );@output_buffer.safe_concat('  
+');@output_buffer.safe_concat('
+
+
+
+<!-- add an item -->
+<section id=\'user-items\'>
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+</thead>
+
+<tbody>
+  
+');   @items.each do |item| 
+@output_buffer.safe_concat('<tr>
+    <td>');@output_buffer.append= ( item.name );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( item.category );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( item.description );@output_buffer.safe_concat('</td>
+
+');   end 
+@output_buffer.safe_concat('</tr>
+</tbody>
+
+</table>
+ </section>
+
+
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:297:in `module_eval'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:297:in `compile'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:244:in `block in compile!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:232:in `synchronize'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:232:in `compile!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:144:in `block in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:125:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/template.rb:143:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/notifications.rb:123:in `instrument'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/base.rb:121:in `process'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_controller/metal.rb:246:in `block in action'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/query_cache.rb:64:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activerecord-3.2.16/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:84:in `protected_app_call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:79:in `better_errors_call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/better_errors-1.1.0/lib/better_errors/middleware.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/logger.rb:16:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/activesupport-3.2.16/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/engine.rb:484:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/application.rb:231:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/railties-3.2.16/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered users/profile.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8.3ms
+
+SyntaxError - /Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:91: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views/users/profile.html.erb:93: syntax error, unexpected end-of-input, expecting keyword_end:
+  actionpack (3.2.16) lib/action_view/template.rb:297:in `'
+  actionpack (3.2.16) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.16) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.16) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.16) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206777405140/variables" for 127.0.0.1 at 2014-01-15 14:40:16 -0500
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:41:02 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mBorrow Load (0.2ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 17
+  Rendered users/profile.html.erb within layouts/application (30.1ms)
+Completed 500 Internal Server Error in 35.8ms
+
+NoMethodError - undefined method `item_item_item_path' for #<#<Class:0x007fb4943bf768>:0x007fb4945ec0e0>:
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:129:in `polymorphic_url'
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:135:in `polymorphic_path'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:395:in `apply_form_for_options!'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:370:in `form_for'
+  app/views/users/profile.html.erb:49:in `_app_views_users_profile_html_erb__1654815335922473479_70206780061000'
+  actionpack (3.2.16) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206780469220/variables" for 127.0.0.1 at 2014-01-15 14:41:03 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30.9ms (Views: 26.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:41:32 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:41:35 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (4.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mBorrow Load (0.6ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (44.7ms)
+Completed 500 Internal Server Error in 63.0ms
+
+NoMethodError - undefined method `item_item_item_path' for #<#<Class:0x007fb4943bf768>:0x007fb49445d800>:
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:129:in `polymorphic_url'
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:135:in `polymorphic_path'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:395:in `apply_form_for_options!'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:370:in `form_for'
+  app/views/users/profile.html.erb:49:in `_app_views_users_profile_html_erb__1654815335922473479_70206780061000'
+  actionpack (3.2.16) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206779631460/variables" for 127.0.0.1 at 2014-01-15 14:41:35 -0500
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:41:45 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mBorrow Load (1.6ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (105.5ms)
+Completed 500 Internal Server Error in 114.2ms
+
+NoMethodError - undefined method `item_item_item_path' for #<#<Class:0x007fb4943bf768>:0x007fb49466f260>:
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:129:in `polymorphic_url'
+  actionpack (3.2.16) lib/action_dispatch/routing/polymorphic_routes.rb:135:in `polymorphic_path'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:395:in `apply_form_for_options!'
+  actionpack (3.2.16) lib/action_view/helpers/form_helper.rb:370:in `form_for'
+  app/views/users/profile.html.erb:49:in `_app_views_users_profile_html_erb__1654815335922473479_70206780304620'
+  actionpack (3.2.16) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.16) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.16) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__772166735054814960__process_action__3753954679419702281__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206758771860/variables" for 127.0.0.1 at 2014-01-15 14:41:45 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:43:01 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 135.4ms (Views: 9.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:02 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:02 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:02 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:02 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:43:05 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mBorrow Load (0.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 106.1ms (Views: 55.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:06 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mBorrow Load (1.2ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 17
+  Rendered users/profile.html.erb within layouts/application (76.4ms)
+Completed 200 OK in 85.0ms (Views: 81.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:43:25 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mBorrow Load (0.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 19.2ms (Views: 15.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:16 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mBorrow Load (1.5ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 17
+  Rendered users/profile.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 21.4ms (Views: 17.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:34 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mBorrow Load (0.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 18.7ms (Views: 14.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 14:44:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2014-01-15 14:53:32 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for ItemsController:
+  actionpack (3.2.16) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206781759060/variables" for 127.0.0.1 at 2014-01-15 14:53:32 -0500
+
+
+Started POST "/__better_errors/70206781759060/variables" for 127.0.0.1 at 2014-01-15 14:55:39 -0500
+
+
+Started POST "/items" for 127.0.0.1 at 2014-01-15 14:56:01 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for ItemsController:
+  actionpack (3.2.16) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206778947720/variables" for 127.0.0.1 at 2014-01-15 14:56:01 -0500
+
+
+Started POST "/items" for 127.0.0.1 at 2014-01-15 14:59:22 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AkB6d1m5lh3SCiL9SUcA8Hs6X+G24SIboDAxe2PaaqE=", "item"=>{"name"=>"The Giver", "category"=>"Book", "description"=>"Kid's Dystopia"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36m (3.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "Book"], ["created_at", Wed, 15 Jan 2014 19:59:22 UTC +00:00], ["description", "Kid's Dystopia"], ["name", "The Giver"], ["updated_at", Wed, 15 Jan 2014 19:59:22 UTC +00:00], ["user_id", 17]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 341.6ms
+
+ActionView::MissingTemplate - Missing template items/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/meghannplunkett/Documents/ga_wdi/Projects/cuppa_sugar/app/views"
+  * "/Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/devise-3.2.2/app/views"
+:
+  actionpack (3.2.16) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.16) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:425:in `_run__4155896617691877266__process_action__3366286681149426210__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__1276151820869474093__call__1218781327540802491__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70206780128800/variables" for 127.0.0.1 at 2014-01-15 14:59:23 -0500
+
+
+Started GET "/items" for 127.0.0.1 at 2014-01-15 15:00:00 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 155.3ms (Views: 78.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:01 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 15:00:01 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 15:00:01 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:01 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:01 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 15:00:06 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+  [1m[35mBorrow Load (0.2ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = 17[0m
+  Rendered users/profile.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 56.5ms (Views: 20.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 15:00:07 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:07 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:07 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 15:00:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 15:00:07 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/items" for 127.0.0.1 at 2014-01-15 15:02:22 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AkB6d1m5lh3SCiL9SUcA8Hs6X+G24SIboDAxe2PaaqE=", "item"=>{"name"=>"Hammer", "category"=>"Tool", "description"=>"beat up, but works"}, "commit"=>"submit"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("borrowed", "category", "created_at", "description", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["borrowed", false], ["category", "Tool"], ["created_at", Wed, 15 Jan 2014 20:02:22 UTC +00:00], ["description", "beat up, but works"], ["name", "Hammer"], ["updated_at", Wed, 15 Jan 2014 20:02:22 UTC +00:00], ["user_id", 17]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/views/users/profile
+Completed 302 Found in 151.5ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-15 15:02:22 -0500
+Processing by UsersController#profile as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+  [1m[36mBorrow Load (0.2ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 17[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 17
+  Rendered users/profile.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 84.6ms (Views: 14.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-15 15:02:23 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-15 15:02:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-15 15:02:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-15 15:02:23 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-15 15:02:23 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
