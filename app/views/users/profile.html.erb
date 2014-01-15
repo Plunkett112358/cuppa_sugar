@@ -1,37 +1,70 @@
 <section id='user-info'>
 
-  <img src="<%= current_user.image_url %>"/>
-  <%= current_user.name %>
-  <%= current_user.bio %>
-  <%= current_user.city %>
+  <img src="<%= current_user.image_url %>"/></br>
+  <%= current_user.name %></br>
+  <%= current_user.bio %></br>
+  <%= current_user.city %>,
   <%= current_user.state %>
 
  </section>
 
-<section id='user-borrows'>
 
+<!-- my items table
+ -->
+
+<h1>Things I've Borrowed</h1>
+<table class="table table-bordered table-hover">
+<section id='user-borrows'>
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+
+</thead>
+<tbody>
+  <tr>
   <% @my_borrows.each do |borrow| %>
 
-    <%= borrow.item.name%>
-    <%= borrow.item.category %>
-    <%= borrow.item.description %>
+    <td><%= borrow.item.name%></td>
+    <td><%= borrow.item.category %></td>
+    <td><%= borrow.item.description %></td>
 <% end %>
+<tr>
+</tbody>
+</section> </table>
 
 
+
+<!-- things I own -->
+
+<h1>Things I Own</h1>
 <section id='user-items'>
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+  
+    </tr>
+</thead>
 
+<tbody>
+  
   <% @items.each do |item| %>
-
-    <%= item.name %>
-    <%= item.category %>
-    <%= item.description %>
+<tr>
+    <td><%= item.name %></td>
+    <td><%= item.category %></td>
+    <td><%= item.description %></td>
 
   <% end %>
+</tr>
+</tbody>
 
-</section>
-
+</table>
  </section>
-
-
 
 
