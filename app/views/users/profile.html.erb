@@ -9,7 +9,7 @@
  </section>
 
 
-<!-- my items table
+<!-- my borrows table
  -->
 
 <h1>Things I've Borrowed</h1>
@@ -20,7 +20,7 @@
       <td>Name</td>
       <td>Category</td>
       <td>Description</td>
-  
+      <td>Date</td>
     </tr>
 
 </thead>
@@ -31,6 +31,7 @@
     <td><%= borrow.item.name%></td>
     <td><%= borrow.item.category %></td>
     <td><%= borrow.item.description %></td>
+    <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
 <% end %>
 <tr>
 </tbody></table>
