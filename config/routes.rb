@@ -13,6 +13,7 @@ end
 
 resources :items
 
+get "views/items/category" => "items#category"
 
 get "views/users/profile" => "users#profile"
 

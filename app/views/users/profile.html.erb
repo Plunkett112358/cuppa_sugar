@@ -39,6 +39,43 @@
 
 
 
+
+<!-- My Items Currently Being borrowed
+ -->
+
+ <h1>Things of Mine Currently Being Borrowed</h1>
+<table class="table table-bordered table-hover">
+<section id='user-borrows'>
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Description</td>
+      <td>Currently in the Possesion of</td>
+      <td>Date</td>
+    </tr>
+
+</thead>
+<tbody>
+  <tr>
+  <% @my_lends.each do |lend| %>
+
+    <td><%= lend.item.name%></td>
+    <td><%= lend.item.category %></td>
+    <td><%= lend.item.description %></td>
+    <td><%= lend.item.user.name %></td>
+    <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
+<% end %>
+<tr>
+</tbody></table>
+</section> 
+
+
+
+
+
+
+
 <!-- things I own -->
 
 <h1>Things I Own</h1>
@@ -62,6 +99,7 @@
 
 
 <!-- add an item -->
+
 <section id='user-items'>
 <table class="table table-bordered table-hover">
 <thead>
@@ -69,6 +107,8 @@
       <td>Name</td>
       <td>Category</td>
       <td>Description</td>
+      <td>Description</td>
+
   
     </tr>
 </thead>
