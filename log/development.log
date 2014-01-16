@@ -46764,3 +46764,481 @@ ActionController::RoutingError (No route matches [GET] "/views/users/app/assets/
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:27:48 -0500
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 LIMIT 1[0m
+  [1m[35mBorrow Load (1.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 29
+  [1m[36mBorrow Load (0.5ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" IN (SELECT "items"."id" FROM "items" WHERE "items"."user_id" = 29)[0m
+  [1m[35mItem Load (1.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 29
+  Rendered users/profile.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 74.4ms (Views: 68.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/views/users/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/views/users/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:15 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/view/items" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Processing by ItemsController#search as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 29 LIMIT 1[0m
+  Rendered items/search.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 189.2ms (Views: 176.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/view/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+
+ActionController::RoutingError (No route matches [GET] "/view/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:29 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2014-01-16 15:32:33 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 29 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 315.9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 15:32:34 -0500
+Processing by ItemsController#index as HTML
+Completed 401 Unauthorized in 23.4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-01-16 15:32:34 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (41.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (194.1ms)
+Completed 200 OK in 254.6ms (Views: 227.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:32:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 101.5ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:32:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-16 15:38:37 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rIL75BFvJCwKs3WuFIA4DEEV2o1j3LS0lp5G9ghdFLs=", "user"=>{"name"=>"Julie", "email"=>"julie@example.com", "number"=>"4017432401", "bio"=>"\"I don't like this\"", "image_url"=>"https://scontent-a-dfw.xx.fbcdn.net/hphotos-ash2/t1/268981_10100150126916506_5338191_n.jpg", "street_address"=>"902 Broadway", "city"=>"New York", "state"=>"NY", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (32.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'julie@example.com' LIMIT 1
+  [1m[36mSQL (134.9ms)[0m  [1mINSERT INTO "users" ("bio", "city", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "image_url", "last_sign_in_at", "last_sign_in_ip", "name", "number", "provider", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "state", "street_address", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21) RETURNING "id"[0m  [["bio", "\"I don't like this\""], ["city", "New York"], ["created_at", Thu, 16 Jan 2014 20:38:38 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "julie@example.com"], ["encrypted_password", "$2a$10$6.uc7A9Z0QaX8DUtJGGvAed/lpR2po3hUnyUTqbjF7KZz0kEE.8Mu"], ["image_url", "https://scontent-a-dfw.xx.fbcdn.net/hphotos-ash2/t1/268981_10100150126916506_5338191_n.jpg"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Julie"], ["number", "4017432401"], ["provider", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["state", "NY"], ["street_address", "902 Broadway"], ["uid", nil], ["updated_at", Thu, 16 Jan 2014 20:38:38 UTC +00:00]]
+  [1m[35m (48.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-01-16 20:38:38.861614', "current_sign_in_at" = '2014-01-16 20:38:38.861614', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-01-16 20:38:38.882197' WHERE "users"."id" = 31
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 797.9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-16 15:38:38 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1
+  Rendered items/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 110.5ms (Views: 108.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:38:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1[0m
+  [1m[35mBorrow Load (0.4ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 31
+  [1m[36mBorrow Load (27.2ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" IN (SELECT "items"."id" FROM "items" WHERE "items"."user_id" = 31)[0m
+  [1m[35mItem Load (5.9ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 31
+  Rendered users/profile.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 89.4ms (Views: 50.0ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/views/users/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:38:42 -0500
+
+ActionController::RoutingError (No route matches [GET] "/views/users/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/views/users/profile" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Processing by UsersController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 31 LIMIT 1[0m
+  [1m[35mBorrow Load (1.1ms)[0m  SELECT "borrows".* FROM "borrows" WHERE "borrows"."user_id" = 31
+  [1m[36mBorrow Load (0.5ms)[0m  [1mSELECT "borrows".* FROM "borrows" WHERE "borrows"."item_id" IN (SELECT "items"."id" FROM "items" WHERE "items"."user_id" = 31)[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = 31
+  Rendered users/profile.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 29.7ms (Views: 23.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_over_ride.css?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /bootstrap_over_ride.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/views/users/app/assets/main.css" for 127.0.0.1 at 2014-01-16 15:39:50 -0500
+
+ActionController::RoutingError (No route matches [GET] "/views/users/app/assets/main.css"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/meghannplunkett/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/meghannplunkett/.rvm/gems/ruby-2.0.0-p247@wdi-block/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
