@@ -5,6 +5,10 @@
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
+  <div><%= f.label :phone_number %>
+  (ex. 5553337777):<br />
+  <%= f.text_field :number %>
+  </div>
   
   <div><%= f.label :bio %><br />
   <%= f.text_area :bio %>

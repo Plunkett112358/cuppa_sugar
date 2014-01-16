@@ -15,14 +15,14 @@ user = User.create(email: "Meghann@example.com", password: 'password', name:"Meg
 
 user_two = User.create(name: "Bob", email: "Bob@example.com", password: 'password')
 
-my_item_object = Item.create(name: "White Noise", category: "book", description: "best book ever")
+my_item_object = Item.create(name: "White Noise", author: "Don DeLillo", description: "best book ever")
 
-my_item_object_3 = Item.create(name:"The Body Artist", category: "book", description: "not too long")
+my_item_object_3 = Item.create(name:"The Body Artist", author: "Don DeLillo", description: "not too long")
 
 user.items << my_item_object
 user.items << my_item_object_3  
 
-my_item_object_2 = Item.create(name: "Libra", category: "book", description: "have not read")
+my_item_object_2 = Item.create(name: "Libra", author: "Don DeLillo", description: "have not read")
 
 
 # user.save!

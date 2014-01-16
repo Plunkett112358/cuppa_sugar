@@ -6,6 +6,7 @@
 <thead>
   <tr>
       <td>Name</td>
+      <td>Author</td>
       <td>Description</td>
        <td>Owner</td>
        <td>Distance</td>
@@ -20,6 +21,7 @@
   <% @all.each do |all| %>
 <tr>
     <td><%= all.name %></td>
+    <td><%= all.author %></td>
     <td><%= all.description %></td>
     <td><%= all.user.name %></td>
     <td>[Distance goes here]</td>

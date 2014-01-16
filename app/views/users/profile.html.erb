@@ -17,8 +17,8 @@
 <section id='user-borrows'>
 <thead>
   <tr>
-      <td>Name</td>
-      <td>Category</td>
+      <td>Title</td>
+      <td>Author</td>
       <td>Description</td>
       <td>Date</td>
     </tr>
@@ -29,7 +29,7 @@
   <% @my_borrows.each do |borrow| %>
 
     <td><%= borrow.item.name%></td>
-    <td><%= borrow.item.category %></td>
+    <td><%= borrow.item.author %></td>
     <td><%= borrow.item.description %></td>
     <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
 <% end %>
@@ -48,8 +48,8 @@
 <section id='user-borrows'>
 <thead>
   <tr>
-      <td>Name</td>
-      <td>Category</td>
+      <td>Title</td>
+      <td>Author</td>
       <td>Description</td>
       <td>Currently in the Possesion of</td>
       <td>Date</td>
@@ -62,7 +62,7 @@
   <% @my_lends.each do |lend| %>
 
     <td><%= lend.item.name%></td>
-    <td><%= lend.item.category %></td>
+    <td><%= lend.item.author %></td>
     <td><%= lend.item.description %></td>
     <td><%= lend.item.user.name %></td>
     <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
@@ -90,8 +90,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %> 
 
- <%= f.label :category %>
-  <%= f.text_field :category %>
+ <%= f.label :author %>
+  <%= f.text_field :author %>
 
    <%= f.label :description %>
   <%= f.text_field :description %>  
@@ -106,8 +106,8 @@
 <table class="table table-bordered table-hover">
 <thead>
   <tr>
-      <td>Name</td>
-      <td>Category</td>
+      <td>Title</td>
+      <td>Author</td>
       <td>Description</td>
       
 
@@ -120,7 +120,7 @@
   <% @items.each do |item| %>
 <tr>
     <td><%= item.name %></td>
-    <td><%= item.category %></td>
+    <td><%= item.author %></td>
     <td><%= item.description %></td>
 
   <% end %>
