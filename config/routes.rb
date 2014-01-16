@@ -24,7 +24,7 @@ get "view/items" => "items#search"
 get "view/items/searchresult" => "items#searchresult"
 # resources :users
 
-resources :borrow
+resources :borrows
 
 # devise_for :users, :controllers => {:omniauth_callbacks => "user/omniauth_callbacks"}
 

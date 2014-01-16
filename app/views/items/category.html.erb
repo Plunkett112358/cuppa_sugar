@@ -18,17 +18,31 @@
 
 <tbody>
   
-  <% @all.each do |all| %>
+  <% @all.each do |item| %>
 <tr>
-    <td><%= all.name %></td>
-    <td><%= all.author %></td>
-    <td><%= all.description %></td>
-    <td><%= all.user.name %></td>
+    <td><%= item.name %></td>
+    <td><%= item.author %></td>
+    <td><%= item.description %></td>
+    <td><%= item.user.name %></td>
     <td>[Distance goes here]</td>
-    <form><td> <button>Borrow!</button> </td></form>
 
-  <% end %>
+<td>
+   <%= form_for @new_borrow do |f|%>
+    <%= f.hidden_field :item_id, :value => item.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    
+    
+     <%= f.submit %> 
+     <% end %>
+   </form>
+
+
+</td>
+
+
 </tr>
+<% end %>
+
 </tbody>
 
 </table>

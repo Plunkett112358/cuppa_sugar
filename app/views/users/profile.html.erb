@@ -38,7 +38,7 @@
     <td><%= borrow.item.author %></td>
     <td><%= borrow.item.description %></td>
     <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
-     <td>Returned?</td>
+     <td> <%=borrow.item.borrowed%> </td>
 <% end %>
 <tr>
 </tbody></table>
@@ -74,10 +74,11 @@
     <td><%= lend.item.description %></td>
     <td><%= lend.item.user.name %></td>
     <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
-    <td>Return button here</td>
+    <td><%= link_to "Returned", borrow_path(lend), method: "delete" %></td>
     <form><td> <button>Remind</button> </td></form>
-<% end %>
 <tr>
+<% end %>
+
 </tbody></table>
 </section> 
 
