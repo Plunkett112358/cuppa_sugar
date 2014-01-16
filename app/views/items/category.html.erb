@@ -1,0 +1,33 @@
+
+
+<h3>All Books</h3>
+<section id='user-items'>
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+      <td>Name</td>
+      <td>Description</td>
+       <td>Owner</td>
+       <td>Distance</td>
+       <td>Ask to Borrow</td>
+
+  
+    </tr>
+</thead>
+
+<tbody>
+  
+  <% @all.each do |all| %>
+<tr>
+    <td><%= all.name %></td>
+    <td><%= all.description %></td>
+    <td><%= all.user.name %></td>
+    <td>[Distance goes here]</td>
+    <form><td> <button>Borrow!</button> </td></form>
+
+  <% end %>
+</tr>
+</tbody>
+
+</table>
+ </section>

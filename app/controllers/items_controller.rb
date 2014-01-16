@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def search
+
   end
 
   def create
@@ -17,7 +18,7 @@ class ItemsController < ApplicationController
 
 
   def category
-
+  @all = Item.all 
       #@items = Item.all.group_by(&:category)
   end
 

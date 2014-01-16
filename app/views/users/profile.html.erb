@@ -53,6 +53,7 @@
       <td>Description</td>
       <td>Currently in the Possesion of</td>
       <td>Date</td>
+      <td>Send a Text Message Reminder</td>
     </tr>
 
 </thead>
@@ -65,6 +66,7 @@
     <td><%= lend.item.description %></td>
     <td><%= lend.item.user.name %></td>
     <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
+    <form><td> <button>Remind</button> </td></form>
 <% end %>
 <tr>
 </tbody></table>
