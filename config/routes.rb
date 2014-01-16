@@ -19,6 +19,8 @@ get "views/users/profile" => "users#profile"
 
 
 get "view/items" => "items#search"
+
+get "view/items/searchresult" => "items#searchresult"
 # resources :users
 
 resources :borrow

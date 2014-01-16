@@ -2,11 +2,9 @@ class ItemsController < ApplicationController
 
 
   def index
-
   end
 
   def search
-   
   end
 
   def create
@@ -17,9 +15,15 @@ class ItemsController < ApplicationController
   redirect_to views_users_profile_path
   end 
 
+
   def category
 
-    
+      @items=Item.all.group_by(&:category)
   end
+
+ def searchresult
+  @result = Item.search(params[:name])
+ end
+
 
 end

@@ -9,12 +9,13 @@
 <body>
   <nav ><% if user_signed_in? %>
     <%= link_to "Sign Out", destroy_user_session_path %>
-  <% end %> 
+  
 <%= link_to "Profile",views_users_profile_path%>
 
 <%= link_to "Search", view_items_path%>
 
-
+<a href="/users/edit">Edit Profile</a>
+<% end %> 
 </nav>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>

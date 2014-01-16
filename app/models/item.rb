@@ -7,6 +7,18 @@ class Item < ActiveRecord::Base
   has_many :borrows
   
 
+def self.search(search)
+
+  results=[]
+  @items=Item.all
+  @items.each do |item|
+    if item.name.downcase.scan(search).empty? == false
+      results << item
+    end 
+  end
+  results
+end
+
   # def borrow_me(borrower)
   #   borrow_record = self.borrows.build(user_id: borrower.id, borrowed: true)
   #   borrow_record.save
