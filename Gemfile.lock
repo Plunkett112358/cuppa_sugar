@@ -64,6 +64,7 @@ GEM
     execjs (2.0.2)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
+    geocoder (1.1.9)
     hashie (2.0.5)
     hike (1.2.3)
     httparty (0.12.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
   devise
+  geocoder
   httparty
   jquery-rails
   json

@@ -23,8 +23,16 @@ class ItemsController < ApplicationController
   end
 
  def searchresult
-  @result = Item.search(params[:name])
- end
+    @result = Item.search("name", params[:name])
+  end
+
+def destroy
+@item = Item.find(params[:id]) 
+@item.destroy
+
+redirect_to views_users_profile_path
+end
+  
 
 
 end

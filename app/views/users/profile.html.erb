@@ -1,6 +1,11 @@
 <section id='user-info'>
 
-  <img style= "width: 100px" src="<%= current_user.image_url %>"/></br>
+
+   <img style= "width: 100px"src="http://www.freeartstutor.com/wp-content/uploads/2009/12/book-drawing-lessons-0005-1024x813.jpg" alt="">
+
+   <img style= "width: 100px" src="<%= current_user.image_url %>"/> 
+
+   <img style= "width: 100px"src="http://www.freeartstutor.com/wp-content/uploads/2009/12/book-drawing-lessons-0005-1024x813.jpg" alt=""></br>
   <%= current_user.name %></br>
   <%= current_user.bio %></br>
   <%= current_user.city %>,
@@ -21,6 +26,7 @@
       <td>Author</td>
       <td>Description</td>
       <td>Date</td>
+      <td>Returned?</td>
     </tr>
 
 </thead>
@@ -32,6 +38,7 @@
     <td><%= borrow.item.author %></td>
     <td><%= borrow.item.description %></td>
     <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
+     <td>Returned?</td>
 <% end %>
 <tr>
 </tbody></table>
@@ -53,6 +60,7 @@
       <td>Description</td>
       <td>Currently in the Possesion of</td>
       <td>Date</td>
+      <td>Returned?</td>
       <td>Send a Text Message Reminder</td>
     </tr>
 
@@ -66,6 +74,7 @@
     <td><%= lend.item.description %></td>
     <td><%= lend.item.user.name %></td>
     <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
+    <td>Return button here</td>
     <form><td> <button>Remind</button> </td></form>
 <% end %>
 <tr>
@@ -109,9 +118,9 @@
       <td>Title</td>
       <td>Author</td>
       <td>Description</td>
+      <td>Already Borrowed?</td>
+      <td>Delete</td>
       
-
-  
     </tr>
 </thead>
 
@@ -122,6 +131,8 @@
     <td><%= item.name %></td>
     <td><%= item.author %></td>
     <td><%= item.description %></td>
+    <td><%=item.borrowed%></td>
+    <td><%= link_to "Delete", item_path(item), method: "delete" %></td>
 
   <% end %>
 </tr>
