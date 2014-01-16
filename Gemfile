@@ -9,6 +9,8 @@ gem 'pg'
 
 gem 'pry'
 gem 'pry-rails'
+gem 'twilio-ruby' 
+
 
 gem 'rspec'
 gem 'capybara'
