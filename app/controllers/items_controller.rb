@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
 
   def category
 
-      @items=Item.all.group_by(&:category)
+      #@items = Item.all.group_by(&:category)
   end
 
  def searchresult

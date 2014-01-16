@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="app/assets/main.css">
   <title>CuppaSugar</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav ><% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path %>
+  <ul class = "nav nav-tabs">
+
+  <% if user_signed_in? %>
+   <li> <%= link_to "Sign Out", destroy_user_session_path %> </li>
   
-<%= link_to "Profile",views_users_profile_path%>
+<li><%= link_to "Profile",views_users_profile_path%></li>
 
-<%= link_to "Search", view_items_path%>
+<li><%= link_to "Search", view_items_path%></li>
 
-<a href="/users/edit">Edit Profile</a>
+<li> <a href="/users/edit">Edit Profile</a></li>
 <% end %> 
-</nav>
+
+</ul>
+
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
        <div class= "container">
 <%= yield %>
 </div>
-  
+ <!--  <ul class="nav nav-tabs">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>
+</ul> -->
 
 </body>
 </html>
