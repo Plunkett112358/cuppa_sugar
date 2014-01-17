@@ -6,12 +6,30 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :bio, :city, :image_url, :name, :password, :state, :street_address, :number
+  attr_accessible :bio, :city, :image_url, :name, :password, :state, :street_address, :phone
 
   has_many :items
   has_many :borrows
 
   devise :omniauthable, :omniauth_providers => [:facebook]
+
+
+def self.call(recipient)
+account_sid = 'AC4a05d4da84322fe3089f97cad1d56c51' 
+auth_token = '2358485c6fe2fdb81b116dcf6bed6821' 
+ 
+# set up a client to talk to the Twilio REST API 
+@client = Twilio::REST::Client.new account_sid, auth_token 
+ 
+@client.account.messages.create({
+  :from => '+14012565470',    
+  :to => "+1#{recipient}",
+  :body => 'Ugh...You take forEVER to read!'
+})
+
+  end 
+
+
 
 def full_address
 

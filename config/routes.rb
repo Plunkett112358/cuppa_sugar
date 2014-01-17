@@ -17,7 +17,7 @@ get "views/items/category" => "items#category"
 
 get "views/users/profile" => "users#profile"
 
-
+post "users/sms/:id" => "users#sms"
 
 get "view/items" => "items#search"
 

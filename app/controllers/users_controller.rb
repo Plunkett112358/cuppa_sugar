@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
 
 def profile
@@ -13,5 +14,13 @@ def profile
   @new_item = Item.new
 end
 
+def sms
+  recipient_id = params[:id]
+  recipient = User.find(recipient_id)
+  User.call(recipient.phone)
+
+  redirect_to views_users_profile_path
+
+end
 
 end

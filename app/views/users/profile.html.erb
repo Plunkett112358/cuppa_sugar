@@ -75,8 +75,10 @@
     <td><%= lend.item.description %></td>
     <td><%= lend.item.user.name %></td>
     <td><%= lend.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
-    <td><%= link_to "Returned", borrow_path(lend), method: "delete" %></td>
-    <form><td> <button>Remind</button> </td></form>
+    <td><%= lend.item.borrowed %></td>
+
+    <td><%= button_to "Remind", {:controller => "users", :action => "sms", id: lend.item.user.id},method: :post %></td>
+   
 <tr>
 <% end %>
 
