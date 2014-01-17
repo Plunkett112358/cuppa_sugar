@@ -19,10 +19,18 @@
 
 #user-info{
 text-align: center;
-  border-radius: 100%;
+ /* border-radius: 100%;*/
 }
 
 .bold {
   font-weight: bold;
   color: #2A5E8C;
+}
+
+.circle {
+  border: black, 12px;
+}
+
+.line {
+  text-align: center;
 }
