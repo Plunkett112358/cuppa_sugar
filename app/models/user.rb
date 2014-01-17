@@ -24,7 +24,7 @@ auth_token = '2358485c6fe2fdb81b116dcf6bed6821'
 @client.account.messages.create({
   :from => '+14012565470',    
   :to => "+1#{recipient}",
-  :body => 'Ugh...You take forEVER to read!'
+  :body => "Pleased be advised that you have borr.owed a book and if you do not finish reading it soon, we will start sending you plot spoilers and passive aggressive notes. Love, Borr.ow the Book Tracking App!"
 })
 
   end 

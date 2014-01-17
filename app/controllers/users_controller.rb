@@ -17,6 +17,7 @@ end
 def sms
   recipient_id = params[:id]
   recipient = User.find(recipient_id)
+  name=recipient.name
   User.call(recipient.phone)
 
   redirect_to views_users_profile_path
