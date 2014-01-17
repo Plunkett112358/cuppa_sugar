@@ -23,10 +23,16 @@
      <td><%= result.author %></td>
     <td><%= result.description %></td>
     <td><%= result.user.name %></td>
-    <td>[Distance goes here]</td>
+    <td><%= result.directions.distance %></td>
 
     <!-- Borrow.new(item_id: params[:id], user_id: current_user) -->
-    <form method><td> <button>Borrow!</button> </td></form>
+     <td><%= form_for @new_borrow do |f|%>
+    <%= f.hidden_field :item_id, :value => result.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    
+    
+     <%= f.submit %> <% end %>
+     </td>
 
   <% end %>
 </tr>

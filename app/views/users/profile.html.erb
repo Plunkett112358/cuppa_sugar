@@ -38,9 +38,9 @@
     <td><%= borrow.item.author %></td>
     <td><%= borrow.item.description %></td>
     <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
-     <td> <%=borrow.item.borrowed%> </td>
-<% end %>
-<tr>
+     <td><%= link_to "Returned", borrow_path(borrow), method: "delete" %></td>
+<tr><% end %>
+
 </tbody></table>
 </section> 
 

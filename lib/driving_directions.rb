@@ -5,7 +5,8 @@ class DrivingDirections
     @ending = options[:ending]
   end
   def url
-    @url = "https://montanaflynn-mapit.p.mashape.com/directions?starting=#{@start}&ending=#{@ending}"
+
+    @url = "https://montanaflynn-mapit.p.mashape.com/directions?starting=#{@start.gsub(" ", "%20")}&ending=#{@ending.gsub(" ", "%20")}"
   end
   def go!
     @response = Unirest::get(url, headers: {"X-Mashape-Authorization" => "pNMqKdhb94S2zg2jLbX7c4FBnNbZFfFo"}).body

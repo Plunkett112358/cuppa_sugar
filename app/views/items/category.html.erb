@@ -24,12 +24,12 @@
     <td><%= item.author %></td>
     <td><%= item.description %></td>
     <td><%= item.user.name %></td>
-    <td>[Distance goes here]</td>
+    <td><%= item.directions.distance %></td>
 
 <td>
    <%= form_for @new_borrow do |f|%>
     <%= f.hidden_field :item_id, :value => item.id %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+    
     
     
      <%= f.submit %> 

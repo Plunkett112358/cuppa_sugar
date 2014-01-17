@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :category, :description, :name, :user_id, :user, :borrowed, :author
-
+  attr_accessor :directions
   belongs_to :user
   ###telling active record to find
 

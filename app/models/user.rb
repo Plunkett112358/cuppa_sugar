@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+def full_address
+
+  "#{self.street_address} #{self.city} #{self.state}"
+
+end
+
 # Find facebook authorization
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

@@ -6,7 +6,11 @@ def new
 end
 
 def create
-  @new_borrow=Borrow.new(item_id: params['item_id'], user: current_user, borrow: true)
+  @new_borrow=Borrow.new(params[:borrow])
+  @new_borrow.user= current_user
+  @new_borrow.item.borrowed = true
+  @new_borrow.save
+  
   redirect_to views_users_profile_path
 end 
 
@@ -16,5 +20,6 @@ def destroy
 
   redirect_to views_users_profile_path
   end
+
 
 end
