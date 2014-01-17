@@ -7,10 +7,10 @@
    <img style= "width: 150px" src="<%= current_user.image_url %>"/> 
 
    <img style= "width: 100px"src="http://www.freeartstutor.com/wp-content/uploads/2009/12/book-drawing-lessons-0005-1024x813.jpg" alt=""></br>
-  <%= current_user.name %></br>
-  <%= current_user.bio %></br>
-  <%= current_user.city %>,
-  <%= current_user.state %>
+  <p class="logo"><%= current_user.name %></p></br>
+  <p><%= current_user.bio %></p></br>
+  <p><%= current_user.city %>,
+  <%= current_user.state %></p>
 
  </section>
 
@@ -23,11 +23,11 @@
 <section id='user-borrows'>
 <thead>
   <tr>
-      <td>Title</td>
-      <td>Author</td>
-      <td>Description</td>
-      <td>Date</td>
-      <td>Returned?</td>
+      <td class="bold">Title</td>
+      <td class="bold">Author</td>
+      <td class="bold">Description</td>
+      <td class="bold">Date</td>
+      <td class="bold">Returned?</td>
     </tr>
 
 </thead>
@@ -39,7 +39,7 @@
     <td><%= borrow.item.author %></td>
     <td><%= borrow.item.description %></td>
     <td><%= borrow.created_at.strftime("Borrowed on %m/%d/%Y") %></td>
-     <td><%= link_to "Returned", borrow_path(borrow), method: "delete" %></td>
+     <td class="bold"><%= link_to "Returned", borrow_path(borrow), method: "delete" %></td>
 <tr><% end %>
 
 </tbody></table>
@@ -56,13 +56,13 @@
 <section id='user-borrows'>
 <thead>
   <tr>
-      <td>Title</td>
-      <td>Author</td>
-      <td>Description</td>
-      <td>Currently in the Possesion of</td>
-      <td>Date</td>
-      <td>Returned?</td>
-      <td>Send a Text Message Reminder</td>
+      <td class="bold">Title</td>
+      <td class="bold">Author</td>
+      <td class="bold">Description</td>
+      <td class="bold">Currently in the Possesion of</td>
+      <td class="bold">Date</td>
+      <td class="bold">Returned?</td>
+      <td class="bold">Send a Text Message Reminder</td>
     </tr>
 
 </thead>
@@ -119,11 +119,11 @@
 <table class="table table-bordered table-hover">
 <thead>
   <tr>
-      <td>Title</td>
-      <td>Author</td>
-      <td>Description</td>
-      <td>Already Borrowed?</td>
-      <td>Delete</td>
+      <td class="bold">Title</td>
+      <td class="bold">Author</td>
+      <td class="bold">Description</td>
+      <td class="bold">Already Borrowed?</td>
+      <td class="bold">Delete</td>
       
     </tr>
 </thead>
